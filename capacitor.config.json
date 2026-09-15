@@ -1,13 +1,5 @@
 {
-  "appId": "com.masar.app",
-  "appName": "مسار",
-  "webDir": "www",
-  "bundledWebRuntime": false,
-  "android": {
-    "allowMixedContent": false,
-    "backgroundColor": "#F6F3ED"
-  },
-  "server": {
-    "androidScheme": "https"
-  }
+  "appId": "com.masar.app.isaac",
+  "appName": "Masar",
+  "webDir": "www"
 }
