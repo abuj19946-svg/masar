@@ -16,10 +16,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: Setup Java JDK
         uses: actions/setup-java@v4
@@ -27,7 +29,7 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Capacitor Android
+      - name: Build Web Assets & Capacitor Sync
         run: |
           npx cap add android || true
           npx cap sync android
