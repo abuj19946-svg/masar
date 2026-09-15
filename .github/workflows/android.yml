@@ -36,7 +36,7 @@ jobs:
           distribution: 'zulu'
           java-version: '21'
 
-      - name: Build Web Assets & Capacitor Sync
+      - name: Build Web Assets & Set Package ID
         run: |
           npx cap add android || true
           npx cap sync android
@@ -45,10 +45,10 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --rerun-tasks
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Masar-APK
+          name: Masar-APK-New
           path: android/app/build/outputs/apk/debug/app-debug.apk
