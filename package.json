@@ -1,0 +1,19 @@
+{
+  "name": "masar-android",
+  "version": "1.0.0",
+  "description": "Masar - personal productivity & self-development app, packaged as a standalone Android app",
+  "private": true,
+  "scripts": {
+    "sync": "npx cap sync android",
+    "open:android": "npx cap open android",
+    "build:debug": "cd android && ./gradlew assembleDebug",
+    "build:release": "cd android && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
+  }
+}
