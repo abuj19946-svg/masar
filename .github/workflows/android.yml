@@ -23,6 +23,13 @@ jobs:
           npm install
           npm install @capacitor/core @capacitor/cli @capacitor/android
 
+      - name: Ensure WWW Directory Exists
+        run: |
+          mkdir -p www
+          if [ ! -f www/index.html ]; then
+            echo '<!DOCTYPE html><html><head><title>Masar</title></head><body><h1>Masar App</h1></body></html>' > www/index.html
+          fi
+
       - name: Setup Java JDK
         uses: actions/setup-java@v4
         with:
